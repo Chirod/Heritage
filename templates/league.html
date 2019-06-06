@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Heritage League</title>
+  <meta name="description" content="Heritage League">
+
+<!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+<body>
+    {{error}}
+    <table border='1'>
+        <thead>
+            <th>League</th>
+            {% for p in players %}
+                <th> {{p[0]}} {{p[1]}}</th>
+            {% endfor %}
+        </thead>
+        <tbody>
+           {% for x in range(players|length) %}
+                <tr>
+                    <td> {{players[x][0]}} {{players[x][1]}}</td>
+                    {% for y in range(results[x]|length) %}
+                        <td>
+                            <input type='button' name='Report' value='{{results[x][y]}}' onclick="window.location = '/report/{{players[x][2]}}/{{players[y][2]}}'"> 
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/register"> Register </a>
+    <a href="/heritage"> Format Guidelines </a>
+</body>
+</html>

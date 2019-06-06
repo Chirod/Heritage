@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Report League Result</title>
+  <meta name="description" content="Report Result">
+
+<!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+<body>
+    <form id="report" action="/report/{{id1}}/{{id2}}" method="post">
+        <select name="wins">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+        </select>
+        <select name="loses">
+            <option value="0"> 0 </option>
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+        </select>
+        <input name="pin" value=""/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
