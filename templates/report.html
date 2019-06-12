@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    {{logedin}}
     <form id="report" action="/report/{{id1}}/{{id2}}" method="post">
         <select name="wins">
             <option value="0"> 0 </option>
@@ -23,6 +24,7 @@
             <option value="1"> 1 </option>
             <option value="2"> 2 </option>
         </select>
+        Your Pin:
         <input name="pin" value=""/>
         <input type="submit" value="Submit"/>
     </form>

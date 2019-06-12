@@ -2,18 +2,21 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>Heritage League</title>
-  <meta name="description" content="Heritage League">
+    <title>Heritage League</title>
+    <meta name="description" content="Heritage League">
 
-<!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+
 
 </head>
 
-<body>
+<body class="w3-black">
+    {{logedin}}
     {{error}}
-    <table border='1'>
+    <table class="w3-table w3-bordered w3-striped w3-gray">
         <thead>
             <th>League</th>
             {% for p in players %}
@@ -25,15 +28,38 @@
                 <tr>
                     <td> {{players[x][0]}} {{players[x][1]}}</td>
                     {% for y in range(results[x]|length) %}
+                        {% if results[x][y] == '-' %}
+                        <td> - </td>
+                        {% else %}
                         <td>
-                            <input type='button' name='Report' value='{{results[x][y]}}' onclick="window.location = '/report/{{players[x][2]}}/{{players[y][2]}}'"> 
+                            <input class="w3-button" type='button' name='Report' value='{{results[x][y]}}' onclick="window.location = '/report/{{players[x][2]}}/{{players[y][2]}}'"> 
                         </td>
+                        {% endif %}
+                        
                     {% endfor %}
                 </tr>
             {% endfor %}
         </tbody>
     </table>
     <a href="/register"> Register </a>
+    <p/>
     <a href="/heritage"> Format Guidelines </a>
+    <table border='1'>
+        <thead>
+            <th>Place</th>
+            <th>Name</th>
+            <th>Points</th>
+            <th>Possible</th>
+        </thead>
+        <tbody>
+        {% for row in standings %}
+            <tr>
+                {% for x in row %}
+                <td> {{x}} </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>   
 </body>
 </html>
