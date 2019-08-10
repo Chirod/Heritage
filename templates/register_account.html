@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Report League Result</title>
+  <meta name="description" content="Report Result">
+
+<!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+<body>
+	
+    {{error}}
+    <form id="register" action="{{post_addr}}" method="post">
+        <label for="username"> Username: </label>
+        <input name="username" value=""/>
+        <p/>
+        <label for="password"> Password: </label>
+        <input name="password" value=""/>
+        <p/>
+        <input type="submit" value="Submit"/>
+    </form>
+    <p/> 
+    {% if login %}
+        <a href="/register_account"> Register account </a>
+    {% endif %}   
+    <p/>
+    We provide no guarentee of password security, reuse passwords at your own risk 
+
+</body>
+</html>

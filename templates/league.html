@@ -14,19 +14,18 @@
 </head>
 
 <body class="w3-black">
-    {{logedin}}
-    {{error}}
+    Welcome user of id:{{ session['id'] }} 
     <table class="w3-table w3-bordered w3-striped w3-gray">
         <thead>
             <th>League</th>
             {% for p in players %}
-                <th> {{p[0]}} {{p[1]}}</th>
+                <th> {{p[0]}}</th>
             {% endfor %}
         </thead>
         <tbody>
            {% for x in range(players|length) %}
                 <tr>
-                    <td> {{players[x][0]}} {{players[x][1]}}</td>
+                    <td> {{players[x][0]}}</td>
                     {% for y in range(results[x]|length) %}
                         {% if results[x][y] == '-' %}
                         <td> - </td>
@@ -41,7 +40,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="/register"> Register </a>
+    <a href="/join"> Join </a>
     <p/>
     <a href="/heritage"> Format Guidelines </a>
     <table border='1'>
